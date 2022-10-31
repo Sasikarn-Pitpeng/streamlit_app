@@ -7,7 +7,7 @@ Description of the app ...
 [![Streamlit App](https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/)
 
 
-Dashboard Link: https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/
+<!-- Dashboard Link: https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/ -->
 ## Section Heading
 
 This is filler text, please replace this with text for this section.
