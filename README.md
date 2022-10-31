@@ -4,7 +4,7 @@ Description of the app ...
 
 ## Demo App
 
-[![Streamlit App](https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/)
+[[Streamlit App](https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/)
 
 
 <!-- Dashboard Link: https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/ -->
