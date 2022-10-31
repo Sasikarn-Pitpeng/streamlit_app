@@ -6,142 +6,152 @@ from datetime import time, datetime
 import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 
-st.write("Python Visualization ด้วย Streamlit")
-st.write(pd.DataFrame({
-    'first column': [1, 2, 3, 4],
-    'second column': [10, 20, 30, 40]
-}))
-chart_data = pd.DataFrame(
-     np.random.randn(20, 3),
-     columns=['a', 'b', 'c'])
-st.line_chart(chart_data) #สร้างและแสดงกราฟเส้น
-add_sidebar = st.sidebar.selectbox('Choose', ('Usage','Payment'))
 
-
-st.header('Day5 สอนใช้ st.write') #เขียนหัวข้อ
-
-# Example 1
-st.write('Hello,ทำตัวหนา *World!* :sunglasses:') 
-
-# Example 2
-st.write(1234) #เขียนตัวเลข
-
-# Example 3
-
-df = pd.DataFrame({
+add_sidebar = st.sidebar.selectbox('Choose', ('home','write','slider','Line chart','selectbox','multiselect'
+,'checkbox','Component','latex','Day5','Day5'))
+if add_sidebar == 'home':
+     st.title('🎈 Streamlit App')
+     st.write('Hello world!')
+     st.write("Python Visualization ด้วย Streamlit")
+     st.write(pd.DataFrame({
      'first column': [1, 2, 3, 4],
      'second column': [10, 20, 30, 40]
-     })
-st.write(df) #เขียน data frame
+     }))
+     chart_data = pd.DataFrame(
+          np.random.randn(20, 3),
+          columns=['a', 'b', 'c'])
+     st.line_chart(chart_data) #สร้างและแสดงกราฟเส้น
 
-# Example 4
-st.write('Below is a DataFrame:', df, 'Above is a dataframe.')
+if add_sidebar == 'write':
+     st.header('Day5 สอนใช้ st.write') #เขียนหัวข้อ
 
-# Example 5
+     # Example 1
+     st.write('Hello,ทำตัวหนา *World!* :sunglasses:') 
 
-df2 = pd.DataFrame(
-     np.random.randn(200, 3),
-     columns=['a', 'b', 'c'])
-c = alt.Chart(df2).mark_circle().encode(
-     x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
-st.write(c) #วาดกราฟ
+     # Example 2
+     st.write(1234) #เขียนตัวเลข
 
-# st.slider
+     # Example 3
 
+     df = pd.DataFrame({
+          'first column': [1, 2, 3, 4],
+          'second column': [10, 20, 30, 40]
+          })
+     st.write(df) #เขียน data frame
 
-st.header('DAY 8 st.slider')
+     # Example 4
+     st.write('Below is a DataFrame:', df, 'Above is a dataframe.')
 
-# Example 1
+     # Example 5
 
-st.subheader('Slider')
-st.write('Int')
-age = st.slider('How old are you?', 0, 130, 25)
-st.write("I'm ", age, 'years old')
+     df2 = pd.DataFrame(
+          np.random.randn(200, 3),
+          columns=['a', 'b', 'c'])
+     c = alt.Chart(df2).mark_circle().encode(
+          x='a', y='b', size='c', color='c', tooltip=['a', 'b', 'c'])
+     st.write(c) #วาดกราฟ
 
-# Example 2
+     # st.slider
 
-st.subheader('Range slider')
-st.write('Float')
-values = st.slider(
-     'Select a range of values',
-     0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+if add_sidebar == 'slider':
+     st.header('DAY 8 st.slider')
 
-# Example 3
+     # Example 1
 
-st.subheader('Range time slider')
-st.write('time')
-appointment = st.slider(
-     "Schedule your appointment:",
-     value=(time(11, 30), time(12, 45)))
-st.write("You're scheduled for:", appointment)
+     st.subheader('Slider')
+     st.write('Int')
+     age = st.slider('How old are you?', 0, 130, 25)
+     st.write("I'm ", age, 'years old')
 
-# Example 4
+     # Example 2
 
-st.subheader('Datetime slider')
-st.write('Datetime')
-start_time = st.slider(
-     "When do you start?",
-     value=datetime(2022, 10, 1, 0, 0),
-     format="MM/DD/YY - hh:mm")
-st.write("Start time:", start_time)
+     st.subheader('Range slider')
+     st.write('Float')
+     values = st.slider(
+          'Select a range of values',
+          0.0, 100.0, (25.0, 75.0))
+     st.write('Values:', values)
 
-st.header('Day 9 Line chart')
+     # Example 3
 
-chart_data = pd.DataFrame(
-     np.random.randn(20, 3),
-     columns=['a', 'b', 'c'])
+     st.subheader('Range time slider')
+     st.write('time')
+     appointment = st.slider(
+          "Schedule your appointment:",
+          value=(time(11, 30), time(12, 45)))
+     st.write("You're scheduled for:", appointment)
 
-st.line_chart(chart_data)
+     # Example 4
 
+     st.subheader('Datetime slider')
+     st.write('Datetime')
+     start_time = st.slider(
+          "When do you start?",
+          value=datetime(2022, 10, 1, 0, 0),
+          format="MM/DD/YY - hh:mm")
+     st.write("Start time:", start_time)
 
-st.header('Day 10 st.selectbox')
+if add_sidebar == 'Line chart':
+     st.header('Day 9 Line chart')
 
-option = st.selectbox(
-     'What is your favorite color?',
-     ('Blue', 'Red', 'Green'))
+     chart_data = pd.DataFrame(
+          np.random.randn(20, 3),
+          columns=['a', 'b', 'c'])
 
-st.write('Your favorite color is ', option)
+     st.line_chart(chart_data)
 
-st.header('Day 11 st.multiselect')
+if add_sidebar == 'selectbox':
+     st.header('Day 10 st.selectbox')
 
-options = st.multiselect(
-     'What are your favorite colors',
-     ['Green', 'Yellow', 'Red', 'Blue'],
-     ['Yellow', 'Red'])
+     option = st.selectbox(
+          'What is your favorite color?',
+          ('Blue', 'Red', 'Green'))
 
-st.write('You selected:', options)
+     st.write('Your favorite color is ', option)
 
-st.header('Day 12 st.checkbox')
+if add_sidebar == 'multiselect':
+     st.header('Day 11 st.multiselect')
 
-st.write ('What would you like to order?')
+     options = st.multiselect(
+          'What are your favorite colors',
+          ['Green', 'Yellow', 'Red', 'Blue'],
+          ['Yellow', 'Red'])
 
-icecream = st.checkbox('Ice cream')
-coffee = st.checkbox('Coffee')
-cola = st.checkbox('Cola')
+     st.write('You selected:', options)
 
-if icecream:
-     st.write("Great! Here's some more 🍦")
+if add_sidebar == 'checkbox':
+     st.header('Day 12 st.checkbox')
 
-if coffee: 
-     st.write("Okay, here's some coffee ☕")
+     st.write ('What would you like to order?')
 
-if cola:
-     st.write("Here you go 🥤")
+     icecream = st.checkbox('Ice cream')
+     coffee = st.checkbox('Coffee')
+     cola = st.checkbox('Cola')
 
-# Day 14
-st.header('Day 14 Component')
-df = pd.DataFrame({
-     'first column': [1, 2, 3, 4],
-     'second column': [10, 20, 30, 40]
-     })
-pr = df.profile_report()
-st_profile_report(pr)
+     if icecream:
+          st.write("Great! Here's some more 🍦")
 
-# Day 15
-st.header('Day 15 st.latex')
-st.latex(r'''
-     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-     \sum_{k=0}^{n-1} ar^k =
-     a \left(\frac{1-r^{n}}{1-r}\right)
-     ''')
+     if coffee: 
+          st.write("Okay, here's some coffee ☕")
+
+     if cola:
+          st.write("Here you go 🥤")
+
+if add_sidebar == 'Component':
+     # Day 14
+     st.header('Day 14 Component')
+     df = pd.DataFrame({
+          'first column': [1, 2, 3, 4],
+          'second column': [10, 20, 30, 40]
+          })
+     pr = df.profile_report()
+     st_profile_report(pr)
+
+if add_sidebar == 'latex':
+     # Day 15
+     st.header('Day 15 st.latex')
+     st.latex(r'''
+          a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+          \sum_{k=0}^{n-1} ar^k =
+          a \left(\frac{1-r^{n}}{1-r}\right)
+          ''')
