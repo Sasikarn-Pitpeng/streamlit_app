@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import altair as alt
 from datetime import time, datetime
+import pandas_profiling
+from streamlit_pandas_profiling import st_profile_report
 
 st.write("Python Visualization ด้วย Streamlit")
 st.write(pd.DataFrame({
@@ -127,3 +129,11 @@ if coffee:
 if cola:
      st.write("Here you go 🥤")
 
+# Day 14
+st.header('Day 14 Component')
+df = pd.DataFrame({
+     'first column': [1, 2, 3, 4],
+     'second column': [10, 20, 30, 40]
+     })
+pr = df.profile_report()
+st_profile_report(pr)
