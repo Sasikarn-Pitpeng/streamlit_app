@@ -4,8 +4,8 @@ Description of the app ...
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/dataprofessor/st-app/)
-
+[![Streamlit App](https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/)
+Dashboard Link: https://sasikarn-pitpeng-streamlit-app-streamlit-app-7cepdx.streamlitapp.com/
 ## Section Heading
 
 This is filler text, please replace this with text for this section.
