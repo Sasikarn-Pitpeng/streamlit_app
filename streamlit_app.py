@@ -12,6 +12,7 @@ add_sidebar = st.sidebar.selectbox('Choose', ('home','write','slider','Line char
 if add_sidebar == 'home':
      st.title('🎈 Streamlit App')
      st.write('Hello world!')
+     st.write('Hello Everyone!')
      st.write("Python Visualization ด้วย Streamlit")
      st.write(pd.DataFrame({
      'first column': [1, 2, 3, 4],
