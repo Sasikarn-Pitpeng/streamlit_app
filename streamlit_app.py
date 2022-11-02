@@ -7,6 +7,13 @@ import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report
 
 
+st.header('st.button')
+
+if st.button('Say hello'):
+     st.write('Why hello there')
+else:
+     st.write('Goodbye')
+
 add_sidebar = st.sidebar.selectbox('Choose', ('home','write','slider','Line chart','selectbox','multiselect'
 ,'checkbox','Component','latex','Day5','Day5'))
 if add_sidebar == 'home':
