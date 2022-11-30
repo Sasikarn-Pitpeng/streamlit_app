@@ -124,7 +124,8 @@ if add_sidebar == 'multiselect':
           'What are your favorite colors',
           ['Green', 'Yellow', 'Red', 'Blue'],
           ['Yellow', 'Red'])
-
+     if  'Green' in options :
+          st.write('your are green')
      st.write('You selected:', options)
 
 if add_sidebar == 'checkbox':
